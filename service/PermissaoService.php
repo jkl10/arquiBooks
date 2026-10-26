@@ -11,7 +11,7 @@
             $this->repository = $repository;
         }
 
-        public function cadrastrarPermissao(Permissao $permissao): int {
+        public function cadrastrarPermissao(Permissao $permissao): void {
             return $this->repository->criarPermissao($permissao);
         }
 

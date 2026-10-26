@@ -21,7 +21,7 @@
             return $this->repository->buscarTodasEscolas();
         }
 
-        public function cadastrarEscola(Escola $escola): int {
+        public function cadastrarEscola(Escola $escola): void {
             return $this->repository->criarEscola($escola);
         }
 

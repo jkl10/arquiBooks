@@ -25,6 +25,10 @@
             return $this->nome;
         }
 
+        public function setId(int $id) {
+            $this->id = $id;
+        }
+
         public function setNome(string $nome): void {
             $this->nome = $nome;
         }

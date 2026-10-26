@@ -76,7 +76,7 @@
             ]);
         }
 
-        public function criarPermissao(Permissao $permissao): int {
+        public function criarPermissao(Permissao $permissao): void {
             $sql = 'INSERT INTO tb_permissao (nm_permissao) VALUES (:nome)';
 
             $smt = $this->pdo->prepare($sql);
@@ -85,7 +85,7 @@
                 'nome' => $permissao->getNome()
             ]);
 
-            return (int) $this->pdo->lastInsertId();
+            $permissao->setId((int) $this->pdo->lastInsertId());
         }
     }
 

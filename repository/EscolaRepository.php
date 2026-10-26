@@ -54,7 +54,7 @@
             
         }
 
-        public function criarEscola(Escola $escola): int {
+        public function criarEscola(Escola $escola): void {
             $sql = 'INSERT INTO tb_escola (cd_escola,nm_escola) VALUES (:codigo,:nome)';
 
             $smt = $this->pdo->prepare($sql);
@@ -64,7 +64,8 @@
                 'nome' => $escola->getNome()
             ]);
 
-            return (int) $this->pdo->lastInsertId();
+            $escola->setId((int) $this->pdo->lastInsertId());
+
         }
 
         public function alterarEscola(Escola $escola): void {
